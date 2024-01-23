@@ -11,13 +11,24 @@ import {
 } from "../ui/card"
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
+import { useExpense } from "@/context/context"
 
 
 export function AddExpense() {
   const [amount , setAmount] = useState()
   const [description , setDescription] = useState()
+  const {addAmount , addDescription}= useExpense()
 
   const add= (e)=>{
+    e.preventDefault()
+
+    if(!amount) return
+
+    addAmount({amount})
+    addDescription({description})
+
+    setAmount("")
+    setDescription("")
 
   }
 
