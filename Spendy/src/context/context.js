@@ -8,8 +8,7 @@ export const ExpenseContext= createContext({
       description:"Food"
     }
   ],
-  addAmount:(amount)=>{},
-  addDescription:(description)=>{},
+  addExpense:(amount , description)=>{},
   deleteExpense:(id)=>{}
 })
 

@@ -17,22 +17,20 @@ import { useExpense } from "@/context/context"
 export function AddExpense() {
   const [amount , setAmount] = useState()
   const [description , setDescription] = useState()
-  const {addAmount , addDescription}= useExpense()
+  const {addExpense}= useExpense()
 
   const add= (e)=>{
     e.preventDefault()
 
     if(!amount) return
 
-    addAmount({amount})
-    addDescription({description})
+    addExpense({amount , description})
 
     setAmount("")
     setDescription("")
 
   }
-
-
+  
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -48,15 +46,14 @@ export function AddExpense() {
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Description</Label>
-              <Input id="Description" placeholder="Description of expense" value={description} onChange={(e)=> setDescription(e.target.value)}/>
+              <Input id="description" placeholder="Description of expense" value={description} onChange={(e)=> setDescription(e.target.value)}/>
             </div>
+            <CardFooter className="pt-4">
+             <Button type="submit">Add</Button>
+            </CardFooter>
           </div>
         </form>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button type="submit">Add</Button>
-      </CardFooter>
     </Card>
   )
 }
