@@ -13,7 +13,7 @@ function TotalExpense() {
   return (
     <div>
       <div>
-        <h1>{totalAmount}</h1>
+        <h1 className='tex-8xl font-bold text-white'>{totalAmount}</h1>
       </div>
     </div>
   );

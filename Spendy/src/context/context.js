@@ -5,10 +5,11 @@ export const ExpenseContext= createContext({
     {
       id:1,
       amount:"100",
-      description:"Food"
+      description:"Food",
+    
     }
   ],
-  addExpense:(amount , description)=>{},
+  addExpense:(amount , description , )=>{},
   deleteExpense:(id)=>{}
 })
 

@@ -14,10 +14,10 @@ export function ExpensesTable({ expenses }) {
     <Table>
       <TableCaption>A list of your recent expenses.</TableCaption>
       <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Date</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+        <TableRow className="">
+          <TableHead className="w-[100px] text-white font-bold">Date</TableHead>
+          <TableHead className="text-white font-bold">Description</TableHead>
+          <TableHead className="text-right text-white font-bold">Amount</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

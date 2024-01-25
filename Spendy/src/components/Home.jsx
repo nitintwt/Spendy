@@ -25,24 +25,40 @@ function Home() {
   }, [expenses])
 
   return (
+
     <ExpenseProvider value={{ expenses, addExpense }}>
-      <div>
-        <div>
-          <Header />
+  <div className="bg-blue-600 text-white min-h-screen">
+    <Header />
+    <div className="container mx-auto flex justify-center items-center pt-8">
+      <div className="w-full max-w-screen-lg flex flex-col md:flex-row">
+        <div className="mb-4 md:mb-0 md:w-1/4">
+          <div className="bg-blue-800 p-6 rounded-md shadow-md">
+            <h2 className="text-2xl font-bold mb-4">Total Expense</h2>
+            <TotalExpense expenses={expenses} />
+          </div>
         </div>
-        <div className='flex min-h-screen '>
-          <div className='ml-20 pt-20'>
+        <div className="md:w-3/4 md:ml-4">
+          <div className="bg-blue-800 rounded-md shadow-md mb-4">
             <AddExpense />
           </div>
-          <div className='ml-20 p-20'>
+          <div className="bg-blue-800 p-6 rounded-md shadow-md">
+            <h2 className="text-2xl font-bold mb-4">Expense List</h2>
             <ExpensesTable expenses={expenses} />
-          </div>
-          <div className='ml-20 p-20'>
-            <TotalExpense expenses={expenses}/>
           </div>
         </div>
       </div>
-    </ExpenseProvider>
+    </div>
+  </div>
+</ExpenseProvider>
+
+
+
+
+
+
+
+
+
   );
 }
 
